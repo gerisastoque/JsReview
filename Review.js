@@ -58,9 +58,20 @@ const people2= [
   {nombre: 'Luis', edad:'27'},
 ]
 
-function combinedPeople(people, people2) {
+function combinarPersonas(people, people2) {
   const combinados = {};
 
- 
+  [...people, ...people2].forEach(persona => {
+    const { nombre, edad } = persona;
+    if (combinados[nombre]) {
+      combinados[nombre].edad += edad;
+    } else {
+      combinados[nombre] = { nombre, edad };
+    }
+  });
 
+  return Object.values(combinados);
+}
+
+log(console.log(combinarPersonas(people, people2)));
 
