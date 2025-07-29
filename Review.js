@@ -6,6 +6,12 @@ const people= [
   {nombre: 'María', edad:'28'}
 ]
 
+function sumarEdades(people) {
+  return people.reduce((total, people) => total + people.edad, 0);
+}
+
+console.log(sumarEdades(people)); 
+
 //2
 
 const objects =[
@@ -51,4 +57,10 @@ const people2= [
   {nombre: 'Ana', edad:'22'},
   {nombre: 'Luis', edad:'27'},
 ]
+
+function combinedPeople(people, people2) {
+  const combinados = {};
+
+ 
+
 
